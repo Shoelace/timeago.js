@@ -6,13 +6,11 @@
   "plugins": ["@typescript-eslint"],
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "prettier/@typescript-eslint"
+    "prettier"
   ],
   "rules": {
-    "@typescript-eslint/ban-ts-ignore": 1,
+    "@typescript-eslint/ban-ts-comment": "warn",
     "@typescript-eslint/camelcase": 0
   }
 }
