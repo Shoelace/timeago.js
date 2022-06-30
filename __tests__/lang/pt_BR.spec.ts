@@ -1,4 +1,4 @@
-import { advanceBy, advanceTo, clear } from 'jest-date-mock';
+import { advanceTo, clear } from 'jest-date-mock';
 import { format, register } from '../../src';
 import pt_BR from '../../src/lang/pt_BR';
 

@@ -41,6 +41,7 @@
     "husky": "^8.0.1",
     "jest": "^28.1.1",
     "jest-date-mock": "^1.0.8",
+    "jest-environment-jsdom": "^28.1.2",
     "jest-expect": "^0.0.1",
     "limit-size": "^0.1.4",
     "lint-md-cli": "^0.1.2",
@@ -66,13 +67,11 @@
   ],
   "jest": {
     "preset": "ts-jest",
-    "runner": "jest-electron/runner",
-    "testEnvironment": "jest-electron/environment",
-    "setupTestFrameworkScriptFile": [
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": [
       "jest-expect"
     ],
     "testRegex": "(/__tests__/.*(test|spec))\\.ts$",
-    "testURL": "https://timeago.org",
     "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**/*.ts",

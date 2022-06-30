@@ -33,6 +33,7 @@ describe('date', () => {
     /**
      * Big number test
      */
+    expect(formatDiff(Number.MIN_SAFE_INTEGER, getLocale('en'))).toEqual('in 285616414 years');
     expect(formatDiff(-9999999999999999999999, getLocale('en'))).toEqual('in 317097919837645 years');
   });
 

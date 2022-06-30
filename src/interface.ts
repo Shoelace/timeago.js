@@ -4,7 +4,7 @@ export type LocaleMap = Record<string, LocaleFunc>;
 
 export type TDate = Date | string | number;
 
-export type TimerPool = Record<number, number>;
+export type TimerPool = Map<number, number>;
 
 /**
  * render / format options
