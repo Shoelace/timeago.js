@@ -4,7 +4,7 @@ import { getLocale } from './register';
 import { LocaleFunc, Opts, TimerPool } from './interface';
 
 // all realtime timer
-const TIMER_POOL: TimerPool = {};
+const TIMER_POOL: TimerPool = new Set<number>();
 
 /**
  * clear a timer from pool
@@ -12,7 +12,7 @@ const TIMER_POOL: TimerPool = {};
  */
 const clear = (tid: number): void => {
   clearTimeout(tid);
-  delete TIMER_POOL[tid];
+  TIMER_POOL.delete(tid)
 };
 
 // run with timer(setTimeout)
@@ -32,7 +32,7 @@ function run(node: HTMLElement, date: string, localeFunc: LocaleFunc, opts: Opts
   }, Math.min(Math.max(nextInterval(diff), minInterval || 1) * 1000, 0x7fffffff)) as unknown) as number;
 
   // there is no need to save node in object. Just save the key
-  TIMER_POOL[tid] = 0;
+  TIMER_POOL.add(tid)
   setTimerId(node, tid);
 }
 
@@ -44,7 +44,10 @@ export function cancel(node?: HTMLElement): void {
   // cancel one
   if (node) clear(getTimerId(node));
   // cancel all
-  else (Object.keys(TIMER_POOL) as unknown as number[]).forEach(clear);
+  else {
+    // cancel all.. doesnt remove timerid from node
+    TIMER_POOL.forEach(clearTimeout)
+  }
 }
 
 /**
