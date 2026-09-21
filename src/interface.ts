@@ -14,4 +14,6 @@ export type Opts = {
   readonly relativeDate?: TDate;
   /** the realtime */
   readonly minInterval?: number;
+  /** attribute holding the value */
+  readonly dateTimeAttributeName?: string
 };

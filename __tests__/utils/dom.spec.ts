@@ -14,5 +14,8 @@ describe('dom', () => {
   test('getDateAttribute', () => {
     expect(getDateAttribute(time)).toBe(`${ms}`);
   });
+  test('getDateAttribute', () => {
+    expect(getDateAttribute(time,{dateTimeAttributeName:'datetime'})).toBe(`${ms}`);
+  });
 });
 

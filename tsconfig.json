@@ -9,8 +9,10 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "lib": ["DOM", "ESNext"],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["vitest/globals"],
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*","__tests__"],
   "exclude": ["node_modules", "dist"]
 }

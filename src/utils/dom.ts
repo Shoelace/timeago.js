@@ -1,12 +1,18 @@
+
 const ATTR_TIMEAGO_TID = 'timeago-id';
+const ATTR_TIMEAGO_DATETIME = 'datetime';
+
+import {  Opts } from '../interface';
 
 /**
  * get the datetime attribute, `datetime` are supported.
  * @param node
+ * @parms opts
  * @returns {*}
  */
-export function getDateAttribute(node: HTMLElement): string {
-  return node.getAttribute('datetime') || '';
+export function getDateAttribute(node: HTMLElement, opts?: Opts): string {
+  return node.getAttribute(opts?.dateTimeAttributeName ? opts?.dateTimeAttributeName : ATTR_TIMEAGO_DATETIME ) || '';
+
 }
 
 /**

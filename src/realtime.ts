@@ -62,7 +62,7 @@ export function render(nodes: HTMLElement | HTMLElement[] | NodeList, locale?: s
     : Array.isArray(nodes) ? nodes : [nodes as HTMLElement];
 
   nodeList.forEach((node: HTMLElement) => {
-    run(node, getDateAttribute(node), getLocale(locale), opts || {});
+    run(node, getDateAttribute(node, opts), getLocale(locale), opts || {});
   });
 
   return nodeList;
